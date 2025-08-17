@@ -1,15 +1,12 @@
 import { Component ,Input, Output,EventEmitter, inject} from '@angular/core';
 import {type TaskType } from './task.model';
 import { TaskService } from '../tasks.service';
-import { DatePipe } from '@angular/common';
-import { Card } from '../../shared/card/card';
 
 @Component({
   selector: 'app-task',
-  standalone:true,
+  standalone:false,
   templateUrl: './task.html',
   styleUrl: './task.css',
-  imports:[DatePipe,Card]
 })
 export class Task {
   @Input ({required: true}) task!: TaskType;

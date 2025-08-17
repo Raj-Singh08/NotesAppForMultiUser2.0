@@ -1,5 +1,6 @@
 import { Component ,Input, input, Output, EventEmitter, signal , computed , output} from '@angular/core';
 import {type UserType } from './user.model'
+import { Card } from '../shared/card/card';
 
 // type UserType = {
 //   id: string;
@@ -9,7 +10,7 @@ import {type UserType } from './user.model'
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  imports: [Card],
   templateUrl: './user.html',
   styleUrl: './user.css'
 })

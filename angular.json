@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "HotelInventory": {
+    "first-angular-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -14,6 +14,9 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/assets",
@@ -24,12 +27,7 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -59,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "HotelInventory:build:production"
+              "buildTarget": "first-angular-app:build:production"
             },
             "development": {
-              "buildTarget": "HotelInventory:build:development"
+              "buildTarget": "first-angular-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,6 +71,10 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/assets",
@@ -90,6 +92,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "e538d0e8-ab32-4f9f-ad52-db25ba6bc74f"
   }
 }

@@ -1,8 +1,6 @@
-import { bootstrapApplication } from '@angular/platform-browser';
+import { platformBrowser } from '@angular/platform-browser';
+import { AppModule } from './app/app.module';
 import 'zone.js';
-import { App } from './app/app';
-import { HeaderComponent } from './app/header/header.component';
 
-bootstrapApplication(App)
-  .catch((err) => console.error(err));
-
+platformBrowser().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
